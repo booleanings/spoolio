@@ -1,6 +1,7 @@
 import "./pool.css";
 import { useDispatch } from "react-redux";
 import { setProps, setSidePanel } from "../../redux/viewSlice";
+import Pool3D from './3dpool/index';
 
 function Pool({ name, amount, admins }) {
   const dispatch = useDispatch();
@@ -11,11 +12,16 @@ function Pool({ name, amount, admins }) {
   }
 
   return (
-    <div className="card" onClick={viewPoolDetails}>
+    <div className="" onClick={viewPoolDetails}>
       <div className="pool">
-        {name}
-        <div className="">Pool</div>
+        <div className="pool-left">
+        <h5>{name}</h5>
+        </div>
+        <div className="pool-right">
+          <h6>${amount}K</h6>
+        </div>
       </div>
+      <Pool3D />
     </div>
   );
 }

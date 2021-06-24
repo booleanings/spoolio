@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { closeSidePanel, setSidePanel } from "../../../redux/viewSlice";
 
@@ -6,7 +6,11 @@ const PoolDetails = ({ name, amount, admins }) => {
   const dispatch = useDispatch();
   const userId = useSelector(state => state.user.userId);
 
-  const [isAdmin] = useState(admins.includes(userId));
+  const [isAdmin, setIsAdmin] = useState(admins.includes(userId));
+
+  useEffect(() => {
+    setIsAdmin(admins.includes(userId));
+  }, [admins, userId]);
 
   const handleClose = () => {
     dispatch(closeSidePanel());

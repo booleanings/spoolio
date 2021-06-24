@@ -6,7 +6,7 @@ import 'react-sliding-side-panel/lib/index.css';
 
 function Home() {
   return (
-    <div>
+    <div className="home">
       <Header />
       <SidePanel />
       <PoolsContainer />

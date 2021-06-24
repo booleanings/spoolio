@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { closeSidePanel } from '../redux/viewSlice';
+import { closeSidePanel } from '../../redux/viewSlice';
 
 const DepositForm = () => {
   const dispatch = useDispatch();

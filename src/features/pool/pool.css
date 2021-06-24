@@ -1,5 +1,28 @@
 .pool {
     margin: 10px;
+    border-radius: 10px;
+    border: 1px solid lightblue;
+    /* background-color: #F2FDFF; */
+    display: flex;
+    flex-direction: row;
+    /* filter: drop-shadow(0 0 3px lightgrey); */
+    height: 7em;
+}
+
+.pool:hover {
+}
+
+.pool-left {
+  border-right: 1px solid lightblue;
+  padding: 20px;
+  width: 80%;
+}
+
+.pool-right {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .pool-box {

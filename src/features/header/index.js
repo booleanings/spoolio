@@ -1,12 +1,17 @@
-import CreatePool from "../pool/create/CreatePool";
 import { setSidePanel } from "../../redux/viewSlice";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from "../../redux/userSlice";
 
 function Header() {
   const dispatch = useDispatch();
+  const userId = useSelector(state => state.user.userId);
 
   const handleCreatePool = () => {
     dispatch(setSidePanel('createPool'));  
+  }
+
+  const handleLogin = () => {
+    dispatch(login());  
   }
 
   return (
@@ -15,7 +20,14 @@ function Header() {
               Poolio
           </div>
           <div>
-             <button className="btn btn-primary" onClick={() => handleCreatePool()}>Create Pool</button>
+            {
+              userId ? (
+                <button className="btn accent-btn" onClick={() => handleCreatePool()}>Create Pool</button>
+              ) :
+              (
+                <button className="btn accent-btn" onClick={() => handleLogin()}>Login</button>
+              )
+            }
           </div>
       </header>
   );

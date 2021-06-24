@@ -3,8 +3,8 @@ import CreatePool from "../pool/create/CreatePool";
 import { useSelector } from "react-redux";
 import SlidingPanel from 'react-sliding-side-panel';
 import PoolDetails from '../pool/detail/PoolDetails';
-import WidthdrawalRequestForm from '../../transactions/WithdrawalRequestForm';
-import DepositForm from '../../transactions/DepositRequestForm';
+import WidthdrawalRequestForm from '../transactions/WithdrawalRequestForm';
+import DepositForm from '../transactions/DepositRequestForm';
 
 const sidePanelContents = {
   createPool: CreatePool,
